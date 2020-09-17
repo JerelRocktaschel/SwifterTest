@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Swifter
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let context = URLContexts.first else { return }
+        let callbackUrl = URL(string: "TWITTER_APP_CALLBACK_URL://")!
+        Swifter.handleOpenURL(context.url, callbackURL: callbackUrl)
+    }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

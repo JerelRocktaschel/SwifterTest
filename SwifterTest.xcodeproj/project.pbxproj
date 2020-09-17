@@ -13,9 +13,13 @@
 		D860A1442513FB2700B14865 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860A1422513FB2700B14865 /* Main.storyboard */; };
 		D860A1462513FB2900B14865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D860A1452513FB2900B14865 /* Assets.xcassets */; };
 		D860A1492513FB2900B14865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860A1472513FB2900B14865 /* LaunchScreen.storyboard */; };
+		DD28DBD28CEF0D8BF5F2F5FE /* Pods_SwifterTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4413CC91AC0805A8DAEC2AC5 /* Pods_SwifterTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21F66D74EE4577552CCECD74 /* Pods-SwifterTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifterTest.release.xcconfig"; path = "Target Support Files/Pods-SwifterTest/Pods-SwifterTest.release.xcconfig"; sourceTree = "<group>"; };
+		4413CC91AC0805A8DAEC2AC5 /* Pods_SwifterTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwifterTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D705A487EADE5B8071098581 /* Pods-SwifterTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifterTest.debug.xcconfig"; path = "Target Support Files/Pods-SwifterTest/Pods-SwifterTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D860A1392513FB2700B14865 /* SwifterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D860A13C2513FB2700B14865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D860A13E2513FB2700B14865 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD28DBD28CEF0D8BF5F2F5FE /* Pods_SwifterTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CB26295B24B5BAEE9B5CF6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4413CC91AC0805A8DAEC2AC5 /* Pods_SwifterTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0E3F0CFD298FB4EFBE08D52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D705A487EADE5B8071098581 /* Pods-SwifterTest.debug.xcconfig */,
+				21F66D74EE4577552CCECD74 /* Pods-SwifterTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D860A1302513FB2700B14865 = {
 			isa = PBXGroup;
 			children = (
 				D860A13B2513FB2700B14865 /* SwifterTest */,
 				D860A13A2513FB2700B14865 /* Products */,
+				C0E3F0CFD298FB4EFBE08D52 /* Pods */,
+				6CB26295B24B5BAEE9B5CF6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D860A14D2513FB2900B14865 /* Build configuration list for PBXNativeTarget "SwifterTest" */;
 			buildPhases = (
+				013F5CF5189A50BC6FD7F1F6 /* [CP] Check Pods Manifest.lock */,
 				D860A1352513FB2700B14865 /* Sources */,
 				D860A1362513FB2700B14865 /* Frameworks */,
 				D860A1372513FB2700B14865 /* Resources */,
+				C090C6738DF5B3664EDBB09F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		013F5CF5189A50BC6FD7F1F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwifterTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C090C6738DF5B3664EDBB09F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwifterTest/Pods-SwifterTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwifterTest/Pods-SwifterTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwifterTest/Pods-SwifterTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D860A1352513FB2700B14865 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		D860A14E2513FB2900B14865 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D705A487EADE5B8071098581 /* Pods-SwifterTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		D860A14F2513FB2900B14865 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21F66D74EE4577552CCECD74 /* Pods-SwifterTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
